@@ -1,0 +1,8 @@
+FROM openjdk:17-alpine
+MAINTAINER Gustavo Rodrigues
+RUN mkdir /app
+WORKDIR /app
+COPY  target/*.jar /app/HandsOnPoc.jar
+ENV buildtag=1.0
+VOLUME [ "/datadata" ]
+CMD [ "java", "-jar", "HandsOnPoc.jar" ]
